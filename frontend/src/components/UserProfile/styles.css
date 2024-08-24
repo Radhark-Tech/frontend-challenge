@@ -1,0 +1,32 @@
+.user-profile-info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.user-profile-text-container{
+    width: 90%;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+
+.user-profile-name{
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 5px;
+    color: rgba(30, 30, 30, 1);
+}
+
+.user-profile-registered{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    margin-top: 0;
+    color: 'rgba(64, 64, 64, 1)';
+}
+
+.user-profile-edit-button{
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+}
