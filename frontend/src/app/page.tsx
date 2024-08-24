@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import { Box } from "@mui/material";
 
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
@@ -11,6 +10,7 @@ import DataLabel from "@/components/DataLabel";
 import UserProfile from "@/components/UserProfile";
 
 import './styles.css';
+import Background from "@/components/Background";
 
 type User = {
   nome: string,
@@ -32,10 +32,7 @@ export default function Home() {
   },[]);
 
   return (
-    <div className='main'>
-      <div style={{ width: '100%' }}>
-        <Box sx={{ bgcolor: 'rgba(64, 64, 64, 1)', height: '25vh', borderRadius: '8px', position: 'relative' }}/>
-      </div>
+    <Background>      
       <div className='content-container'>
         <div className='content-header'>
           <UserProfile />
@@ -58,6 +55,6 @@ export default function Home() {
           </DataLabel>          
         </div>          
       </div>
-    </div>
+    </Background>
   );
 }

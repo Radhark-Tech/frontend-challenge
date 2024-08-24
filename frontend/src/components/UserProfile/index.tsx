@@ -1,7 +1,7 @@
 import './styles.css';
 
 import EditIcon from '@mui/icons-material/Edit';
-import { Avatar } from '@mui/material';
+import { Avatar, Link } from '@mui/material';
 
 export default function UserProfile(){
     return(
@@ -18,10 +18,10 @@ export default function UserProfile(){
                     <h2  className='user-profile-registered'>Início 06 Jun,2024</h2>
                 </div>
             </div>            
-            <div className='user-profile-edit-button'>
-              <EditIcon />
+            <Link href='/edit_profile' underline='always' color='rgba(134, 59, 255, 1)' className='user-profile-edit-button'>
+              <EditIcon sx={{ width: 18, color: 'rgba(134, 59, 255, 1)' }} />
               Editar
-            </div>
+            </Link>
         </>
     );
 }

@@ -29,4 +29,6 @@
     width: 10%;
     display: flex;
     flex-direction: row;
+    color: rgba(134, 59, 255, 1);
+    font-size: .93rem;
 }
