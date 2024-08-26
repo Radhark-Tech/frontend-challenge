@@ -81,8 +81,8 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                 </div>
             </div>
             <div className="submit-button-container">
-                <Button variant="outlined" component={NextLink} href="/profile" color='secondary'>Cancelar</Button>
-                <Button variant="contained" color='secondary' type="submit">Salvar</Button>
+                <Button variant="outlined" component={NextLink} href="/profile" sx={{borderRadius: '5px'}} color='secondary'>Cancelar</Button>
+                <Button variant="contained" sx={{borderRadius: '5px'}} color='secondary' type="submit">Salvar</Button>
             </div>
         </form>
     );

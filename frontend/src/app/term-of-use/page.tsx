@@ -1,7 +1,7 @@
+import TitlePage from "@/components/TitlePage";
+
 export default function TermOfUse(){
     return(
-        <div>
-            Termo de Uso
-        </div>
+        <TitlePage title='Termos de Uso' />
     );
 }
