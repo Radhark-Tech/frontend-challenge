@@ -1,5 +1,5 @@
+import { Box } from '@mui/material';
 import './styles.css';
-import { Box } from "@mui/material";
 
 type ContentBackground = {
     children: React.ReactNode

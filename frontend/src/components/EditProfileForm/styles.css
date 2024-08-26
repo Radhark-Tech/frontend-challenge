@@ -1,0 +1,47 @@
+.personal-data-container{
+    width: 100%;
+    height: 7.5rem; 
+    margin-bottom: 35px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    
+}
+.edit-profile-title {
+    width: 100%;
+    height: 45px;
+    padding-left: 15px;
+    padding-top: 8px;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: .75rem;
+    color: rgba(30, 30, 30, 1);
+}
+.input-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3.5rem;
+    gap: 8px;
+    padding: 0px 15px;
+}
+.registration-data-container{
+    width: 100%;
+    height: 7.5rem;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.submit-button-container{
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
