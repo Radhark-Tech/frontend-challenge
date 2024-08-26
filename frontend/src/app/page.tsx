@@ -9,36 +9,31 @@ import DataLabel from '@/components/DataLabel';
 import UserProfile from '@/components/UserProfile';
 import Background from '@/components/Background';
 
-import { User } from '@/Types/UserType';
+import { useUserContext } from '@/context/UserContext';
 import './styles.css';
 
-const user: User = {
-  name: 'Ana Cláudia Sousa',
-  crm: '123456789',
-  email: 'draanaclaudia@exemplo.com',
-  phone: '(21) 99999-9999' 
-}
-
 export default function Home() {
+
+  const { userProfile } = useUserContext();
 
   return (
     <Background>      
       <div className='content-container'>
         <div className='content-header'>
-          <UserProfile />
+          <UserProfile name={userProfile?.name} />
         </div>          
         <div className='labels-container'>
           <h3 className='title-data-labels'>Dados cadastrais</h3>
-          <DataLabel text={user?.name}>
+          <DataLabel text={userProfile?.name}>
             <PersonOutlineOutlinedIcon color='disabled' style={{width: '18px'}} />
           </DataLabel>          
-          <DataLabel text={user?.crm}>
+          <DataLabel text={userProfile?.CRM}>
             <DocumentScannerOutlinedIcon color='disabled' style={{width: '18px'}} />
           </DataLabel>
-          <DataLabel text={user?.email}>
+          <DataLabel text={userProfile?.email}>
             <MailOutlinedIcon color='disabled' style={{width: '18px'}} />
           </DataLabel>
-          <DataLabel text={user?.phone}>
+          <DataLabel text={userProfile?.telefone}>
             <LocalPhoneOutlinedIcon color='disabled' style={{width: '18px'}} />
           </DataLabel>          
         </div>          

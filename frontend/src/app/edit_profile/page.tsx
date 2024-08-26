@@ -1,21 +1,16 @@
 "use client"
 
+import { useContext } from "react";
 import Background from "@/components/Background";
 import ButtonUploadFile from "@/components/ButtonUploadFile";
 import CurrentImage from "@/components/UploadFile";
 import EditProfileForm from "@/components/EditProfileForm";
+import { UserContext } from "@/context/UserContext";
 import './styles.css';
-import { User } from "@/Types/UserType";
-
-const user: User = {
-    name: 'Ana Cláudia Sousa',
-    crm: '123456789',
-    email: 'draanaclaudia@exemplo.com',
-    phone: '(21) 99999-9999' 
-}
 
 export default function edit_profile() {
-    
+    const { userProfile } = useContext(UserContext);
+
     return(
         <Background>
             <div className="form-container">                
@@ -25,7 +20,7 @@ export default function edit_profile() {
                         <ButtonUploadFile />
                     </div>
                 </div>
-                <EditProfileForm {...user}/>
+                <EditProfileForm {...userProfile} />
             </div>
         </Background>
     )

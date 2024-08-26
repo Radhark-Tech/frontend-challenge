@@ -1,18 +1,18 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import NextLink from 'next/link';
 import { Button, TextField } from "@mui/material";
 import { User } from "@/Types/UserType";
 import './styles.css';
 
-export default function EditProfileForm({name, crm, email, phone}: User){
-    const { handleSubmit, register, formState: {errors}, watch  } = useForm<User>({
+export default function EditProfileForm({id, name, CRM, email, telefone}: User, updateUser: any){
+    const { handleSubmit, register, formState: {errors} } = useForm<User>({
         defaultValues: {
             name: name,
-            crm: crm,
+            CRM: CRM,
             email: email,
-            phone: phone
+            telefone: telefone
         }
     });
-
     const onSubmit: SubmitHandler<User> = (data) => {
         console.log(data);
     }
@@ -31,10 +31,10 @@ export default function EditProfileForm({name, crm, email, phone}: User){
                     />
                     <TextField
                         fullWidth
-                        error={errors.crm ? true:false}
+                        error={errors.CRM ? true:false}
                         label="CRM"
-                        helperText={errors.crm?.message}
-                        {...register("crm",{ required: false, minLength: {value: 9, message: 'Tamanho mínimo de 9 números.'} })}
+                        helperText={errors.CRM?.message}
+                        {...register("CRM",{ required: false, minLength: {value: 9, message: 'Tamanho mínimo de 9 números.'} })}
                     />
                 </div>
             </div>
@@ -51,15 +51,15 @@ export default function EditProfileForm({name, crm, email, phone}: User){
                     />
                     <TextField
                         fullWidth
-                        error={errors.phone ? true:false}
+                        error={errors.telefone ? true:false}
                         label="Telefone"
-                        helperText={errors.phone?.message}
-                        {...register("phone",{ required: 'Este campo é obrigatório', minLength: {value: 11, message: 'Tamanho mínimo de 11 números.'} })}
+                        helperText={errors.telefone?.message}
+                        {...register("telefone",{ required: 'Este campo é obrigatório', minLength: {value: 11, message: 'Tamanho mínimo de 11 números.'} })}
                     />
                 </div>
             </div>
             <div className="submit-button-container">
-                <Button variant="outlined" color='secondary'>Cancelar</Button>
+                <Button variant="outlined" component={NextLink} href="/" color='secondary'>Cancelar</Button>
                 <Button variant="contained" color='secondary' type="submit">Salvar</Button>
             </div>
         </form>

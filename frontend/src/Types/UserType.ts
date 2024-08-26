@@ -1,6 +1,7 @@
 export type User = {
+    id?: string,
     name?: string,
-    crm?: string,
+    CRM?: string,
     email?: string,
-    phone?: string
+    telefone?: string
 }
