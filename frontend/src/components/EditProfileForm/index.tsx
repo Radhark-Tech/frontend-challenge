@@ -59,7 +59,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                 </div>
             </div>
             <div className="submit-button-container">
-                <Button variant="outlined" component={NextLink} href="/" color='secondary'>Cancelar</Button>
+                <Button variant="outlined" component={NextLink} href="/profile" color='secondary'>Cancelar</Button>
                 <Button variant="contained" color='secondary' type="submit">Salvar</Button>
             </div>
         </form>
