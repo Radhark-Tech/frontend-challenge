@@ -13,8 +13,29 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
             telefone: telefone
         }
     });
+
+    const sendData = async (data: User) => {
+        try{
+            await fetch(`https://radhark.free.beeceptor.com/doctor/profile`,{
+                method: 'PATCH',
+                body: JSON.stringify({
+                    "id": id,
+                    "name": data.name,
+                    "CRM": data.CRM,
+                    "email": data.email,
+                    "telefone": data.telefone
+                })
+            })
+            alert('Mudança Salva com sucesso.');
+        }
+        catch(err){
+            console.error(err);
+            alert('Houve algum problema.');
+        }
+    }
+
     const onSubmit: SubmitHandler<User> = (data) => {
-        console.log(data);
+        sendData(data);
     }
     
     return(
@@ -43,7 +64,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                 <div className="input-container">
                     <TextField
                         fullWidth
-                        size="medium"
+                        type="email"
                         error={errors.email ? true:false}
                         label="Email"
                         helperText={errors.email?.message}
@@ -51,6 +72,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                     />
                     <TextField
                         fullWidth
+                        type="tel"
                         error={errors.telefone ? true:false}
                         label="Telefone"
                         helperText={errors.telefone?.message}

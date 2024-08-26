@@ -19,7 +19,7 @@ export default function UserProfile({name}: string|any){
                     <h2  className='user-profile-registered'>Início 06 Jun,2024</h2>
                 </div>
             </div>            
-            <Link component={NextLink} href='/profile/edit' underline='always' color='rgba(134, 59, 255, 1)' className='user-profile-edit-button'>
+            <Link component={NextLink} href='/profile/edit' underline='always' color='primary' className='user-profile-edit-button'>
               <EditIcon sx={{ width: 18, color: 'rgba(134, 59, 255, 1)' }} />
               Editar
             </Link>

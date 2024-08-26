@@ -8,7 +8,7 @@ import EditProfileForm from "@/components/EditProfileForm";
 import { UserContext } from "@/context/UserContext";
 import './styles.css';
 
-export default function edit_profile() {
+export default function EditPage() {
     const { userProfile } = useContext(UserContext);
 
     return(

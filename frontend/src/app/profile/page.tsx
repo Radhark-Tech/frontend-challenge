@@ -11,6 +11,9 @@ import Background from '@/components/Background';
 
 import { useUserContext } from '@/context/UserContext';
 import './styles.css';
+import { Avatar, Button } from '@mui/material';
+import Equipe from '@/components/Equipe';
+import TermOfUse from '@/components/TermOfUse';
 
 export default function Home() {
 
@@ -22,7 +25,7 @@ export default function Home() {
           <UserProfile name={userProfile?.name} />
         </div>          
         <div className='labels-container'>
-          <h3 className='title-data-labels'>Dados cadastrais</h3>
+          <h3 className='title-data-labels'>DADOS CADASTRAIS</h3>
           <DataLabel text={userProfile?.name}>
             <PersonOutlineOutlinedIcon color='disabled' style={{width: '18px'}} />
           </DataLabel>          
@@ -35,7 +38,12 @@ export default function Home() {
           <DataLabel text={userProfile?.telefone}>
             <LocalPhoneOutlinedIcon color='disabled' style={{width: '18px'}} />
           </DataLabel>          
-        </div>          
+        </div>
+        <div className='labels-container' style={{marginTop: '35px'}}>
+          <h3 className='title-data-labels'>EQUIPE</h3>
+          <Equipe />
+        </div>
+        <TermOfUse />
       </div>
     </Background>
   );

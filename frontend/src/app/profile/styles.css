@@ -1,6 +1,6 @@
 .content-container {
     width: 110vh;
-    height: 80vh;
+    height: 120vh;
     top: 8.1rem;
 
     position: absolute;
@@ -16,10 +16,11 @@
     background-color: #Fff;
     border-radius: 5px;
     width: 100%;
-    padding: 5px 20px;
+    padding: 10px 20px;
 }
 
 .title-data-labels {
     color: rgba(134, 59, 255, 1);
     font-size: .75rem;
+
 }
