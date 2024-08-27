@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Página de Usuário e Editar Usuário
 
-## Getting Started
+## 🎯 Objetivo
+Criar páginas parar visualizar perfis de usuários e modificar detalhes do perfil, como nome, email, CRM e telefone.
 
-First, run the development server:
+### Este projeto ainda está em desenvolvimento e passando por melhorias nas seguintes tarefas:
+
+- [x] Capturar dados no formulário de edição de perfil.
+- [x] Enviar como JSON para a API.
+
+## 📋 Requisitos
+- Node v20+
+- Next v14+ 
+
+## 💻 Para começar
+
+Primeiro, baixe as dependências utilizando o node:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Depois, inicie um servidor de desenvolvimento:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+$ npm run dev
+# ou
+$ yarn dev
+# ou
+$ pnpm dev
+# ou
+$ bun dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Abra o endereço: [http://localhost:3000](http://localhost:3000) 
 
-## Learn More
+## :sparkles: Features 
 
-To learn more about Next.js, take a look at the following resources:
+- ### Profile Page (/profile)
+- ### Edit Profile Page (/profile/edit)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🌐 Variável de ambiente
+```bash
+# Variáveis de ambiente necessárias para o código funcionar:
+NEXT_PUBLIC_URL="url_da_api"
+```
