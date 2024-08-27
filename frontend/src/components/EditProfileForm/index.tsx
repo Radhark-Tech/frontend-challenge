@@ -26,7 +26,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
     const sendData = async (data: User) => {
         try{
             setIsSent(true);
-            const response = await fetch(`https://radhark.free.beeceptor.com/doctor/profile`,{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}`,{
                 method: 'PATCH',
                 body: JSON.stringify({
                     "id": id,
