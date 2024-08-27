@@ -15,7 +15,7 @@ import TitlePage from '@/components/TitlePage';
 import { useUserContext } from '@/context/UserContext';
 import './styles.css';
 
-export default function Home() {
+export default function Profile() {
 
   const { userProfile } = useUserContext();
   return (

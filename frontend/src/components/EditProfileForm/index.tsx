@@ -1,11 +1,20 @@
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import NextLink from 'next/link';
+
 import { Button, TextField } from "@mui/material";
+
 import { User } from "@/Types/UserType";
+import AlertForm from "../Alert";
 import './styles.css';
 
+
 export default function EditProfileForm({id, name, CRM, email, telefone}: User, updateUser: any){
-    const { handleSubmit, register, formState: {errors} } = useForm<User>({
+
+    const [status, setStatus] = useState<boolean>(true);
+    const [isSent, setIsSent] = useState<boolean>(false);
+
+    const { handleSubmit, register, formState: {errors}, watch } = useForm<User>({
         defaultValues: {
             name: name,
             CRM: CRM,
@@ -16,7 +25,8 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
 
     const sendData = async (data: User) => {
         try{
-            await fetch(`https://radhark.free.beeceptor.com/doctor/profile`,{
+            setIsSent(true);
+            const response = await fetch(`https://radhark.free.beeceptor.com/doctor/profile`,{
                 method: 'PATCH',
                 body: JSON.stringify({
                     "id": id,
@@ -24,13 +34,12 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                     "CRM": data.CRM,
                     "email": data.email,
                     "telefone": data.telefone
-                })
+                }),
             })
-            alert('Mudança Salva com sucesso.');
+            setStatus(response.ok);
         }
         catch(err){
             console.error(err);
-            alert('Houve algum problema.');
         }
     }
 
@@ -44,6 +53,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                 <h3 className="edit-profile-title">INFORMAÇÕES PESSOAIS</h3>
                 <div className="input-container">
                     <TextField
+                        onChangeCapture={() => {isSent ? setIsSent(false) : isSent}}
                         fullWidth
                         error={errors.name ? true:false}
                         label="Nome Completo"
@@ -51,6 +61,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                         {...register("name",{ required: 'Este campo é obrigatório.' })}
                     />
                     <TextField
+                        onChangeCapture={() => {isSent ? setIsSent(false) : isSent}}
                         fullWidth
                         error={errors.CRM ? true:false}
                         label="CRM"
@@ -63,6 +74,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                 <h3 className="edit-profile-title">DADOS CADASTRAIS</h3>
                 <div className="input-container">
                     <TextField
+                        onChangeCapture={() => {isSent ? setIsSent(false) : isSent}}
                         fullWidth
                         type="email"
                         error={errors.email ? true:false}
@@ -71,6 +83,7 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                         {...register("email",{ required: 'Este campo é obrigatório' })}
                     />
                     <TextField
+                        onChangeCapture={() => {isSent ? setIsSent(false) : isSent}}
                         fullWidth
                         type="tel"
                         error={errors.telefone ? true:false}
@@ -84,6 +97,9 @@ export default function EditProfileForm({id, name, CRM, email, telefone}: User, 
                 <Button variant="outlined" component={NextLink} href="/profile" sx={{borderRadius: '5px'}} color='secondary'>Cancelar</Button>
                 <Button variant="contained" sx={{borderRadius: '5px'}} color='secondary' type="submit">Salvar</Button>
             </div>
+            {
+                isSent && (<AlertForm status={status} />)
+            }
         </form>
     );
 }

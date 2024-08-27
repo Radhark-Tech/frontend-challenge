@@ -1,9 +1,16 @@
 "use client"
 
-import { useState, createContext, useContext, useCallback, useEffect } from "react";
+import { 
+    useState,
+    createContext,
+    useContext,
+    useCallback,
+    useEffect
+} from "react";
+import { User } from "@/Types/UserType";
 
-let test: any;
-export const UserContext = createContext(test);
+let user: any;
+export const UserContext = createContext(user);
 
 export default function UserProvider ({children}: {children: React.ReactNode}) {
     const [userProfile, setUserProfile] = useState();

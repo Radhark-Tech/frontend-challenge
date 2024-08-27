@@ -1,13 +1,15 @@
 "use client"
 
 import { useContext } from "react";
+
 import Background from "@/components/Background";
 import ButtonUploadFile from "@/components/ButtonUploadFile";
 import CurrentImage from "@/components/UploadFile";
 import EditProfileForm from "@/components/EditProfileForm";
 import { UserContext } from "@/context/UserContext";
-import './styles.css';
 import TitlePage from "@/components/TitlePage";
+
+import './styles.css';
 
 export default function EditPage() {
     const { userProfile } = useContext(UserContext);
