@@ -1,0 +1,28 @@
+.image-upload-title-container{
+    height: 100%;
+    gap: 10px;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload-image-title{
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.upload-image-title > h5 {
+    color: rgba(30, 30, 30, 1);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+.upload-image-title > h6 {
+    color: rgba(30, 30, 30, .56);
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    margin-left: 8px;
+}
