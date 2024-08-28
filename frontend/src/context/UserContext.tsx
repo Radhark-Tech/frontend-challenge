@@ -17,8 +17,16 @@ export default function UserProvider ({children}: {children: React.ReactNode}) {
 
     const getData = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}`,{method: 'GET'})
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}`,{
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    "ngrok-skip-browser-warning": "true",
+                    "Access-Control-Allow-Origin": "*"
+                }
+            })
             const data: any = await response.json();
+            console.log(data)
             setUserProfile(data);
         }
         catch(error) {
