@@ -48,4 +48,4 @@ Uma listagem de arquivos será gerada com a url assinada de cada um deles onde v
 
 Todos esses endpoints deverão ser acessados enviando um Bearer Token no header, utilizando o header authorization. Pode ser o valor que quiser, contanto que siga o mesmo valor sempre, visto que ele será o guia para o acesso às imagens enviadas.
 
-Os endpoints e seus payloads podem ser consultados [aqui](https://frontend-challenge-backend-842303020925.us-east1.run.app).
+Os endpoints e seus payloads podem ser consultados [aqui](https://frontend-challenge-backend-842303020925.us-east1.run.app/docs).
