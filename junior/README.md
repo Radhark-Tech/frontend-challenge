@@ -21,7 +21,8 @@ React Hook Form
 TypeScript
 
 
-GET -  https://radhark.free.beeceptor.com/doctor/profile
-PATCH - https://radhark.free.beeceptor.com/doctor/profile
+GET - https://frontend-challenge-backend-842303020925.us-east1.run.app/doctor
+
+PUT - https://frontend-challenge-backend-842303020925.us-east1.run.app/doctor
 
 ![Screenshot 2024-08-23 at 11 06 03](https://github.com/user-attachments/assets/3b31446a-e8a6-42ff-8ba0-2a02afd91549)
